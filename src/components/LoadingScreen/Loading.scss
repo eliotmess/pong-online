@@ -1,0 +1,37 @@
+#pongloading {
+  .st0 {
+    fill: #27262b;
+    stroke: #27262b;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+  }
+
+  path {
+    stroke: none;
+    fill: none;
+    stroke-dasharray: 700;
+    opacity: 10;
+    animation: loadLogo 1s cubic-bezier(0, 0.23, 0.7, 0.1);
+  }
+
+  @keyframes loadLogo {
+    0% {
+      fill: none;
+      opacity: 0;
+      stroke-dashoffset: 700;
+    }
+
+    30% {
+      opacity: 10;
+      fill: none;
+      stroke-dashoffset: 700;
+    }
+
+    100% {
+      fill: none;
+      opacity: 10;
+      opacity: 1;
+      stroke-dashoffset: 0;
+    }
+  }
+}

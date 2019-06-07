@@ -1,0 +1,27 @@
+{
+  "short_name": "Pong-Clone",
+  "name": "1000000th Pong Clone",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffed90",
+  "background_color": "#ffed90",
+  "description": "Fairly faithful port of Atari's Pong with websockets implementation",
+  "orientation": "landscape"
+}
