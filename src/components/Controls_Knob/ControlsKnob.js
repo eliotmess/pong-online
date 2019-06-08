@@ -17,8 +17,8 @@ const KnobWrapper = styled.div`
 `;
 
 const KnobController = styled(Knob)`
-    width: 35vh !important;
-    height: 35vh !important;
+    width: 40vh !important;
+    height: 40vh !important;
     padding: 5vh;
     display: inline-block;
 
