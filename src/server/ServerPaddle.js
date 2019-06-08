@@ -29,6 +29,12 @@ ServerPaddle.prototype = {
       case 'ArrowUp':
         this.move(0, -moveY);
         break;
+      case 'KnobDown':
+        this.move(0, moveY);
+        break;
+      case 'KnobUp':
+        this.move(0, -moveY);
+        break;
       default:
         this.dy = 4;
     }

@@ -41,6 +41,7 @@ class MainView extends Component {
     this.state = {
       loading: true,
       playerName: '',
+      controls: 'knob',
       opponentName: '',
       roomId: '',
       inLobby: false,
@@ -64,6 +65,10 @@ class MainView extends Component {
   handleSettingPlayerName = playerName => {
     this.setState({ playerName });
   };
+
+  handleSettingControls = controls => {
+    this.setState({ controls });
+  }
 
   handlePlayerOne = isPlayerOne => {
     this.setState({ isPlayerOne });
@@ -120,7 +125,8 @@ class MainView extends Component {
       isPlayerOne,
       loading,
       error,
-      inLobby
+      inLobby,
+      controls
     } = this.state;
     return (
       <>
@@ -136,12 +142,14 @@ class MainView extends Component {
             playerName={playerName}
             opponentName={opponentName}
             roomId={roomId}
+            controls={controls}
             isPlayerOne={isPlayerOne}
             goToLobby={() => this.handleInAndOutLobby()}
             inLobby={inLobby}
             setRoomId={id => this.handleSettingRoomId(id)}
             setPlayerName={name => this.handleSettingPlayerName(name)}
             setOpponentName={name => this.handleSettingOpponentName(name)}
+            setControls={c => this.handleSettingControls(c)}
             setGame={hasStartedGame => this.handleSettingGame(hasStartedGame)}
             setPlayerOne={val => this.handlePlayerOne(val)}
             handleError={err => this.handleError(err)}
@@ -151,6 +159,7 @@ class MainView extends Component {
         {gameOn && (
           <GameAreaWithSocket
             roomId={roomId}
+            controls={controls}
             isPlayerOne={isPlayerOne}
             leaveGame={() => this.handleLeavingRoom()}
           />

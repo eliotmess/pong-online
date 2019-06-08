@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Checkmark } from '../../images/checkmark.svg';
 
@@ -58,36 +58,27 @@ const RoomReadyCheckbox = styled.input`
   width: 1px;
 `;
 
-class ReadyCheckbox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: false
-    };
+const ReadyCheckbox = ({ getToGame }) => {
+  const [checked, setChecked] = useState(false);
+
+  const handlePlayerDecision = () => {
+    setChecked(!checked);
+    getToGame(!checked);
   }
 
-  handlePlayerDecision() {
-    const { getToGame } = this.props;
-    const { checked } = this.state;
-    this.setState({ checked: !checked }, () => getToGame(!checked));
-  }
-
-  render() {
-    const { checked } = this.state;
-    return (
-      <RoomReadyLabel>
-        Tick when you ready
-        <RoomReadyCustomCheckbox checked={checked}>
-          <Checkmark />
-        </RoomReadyCustomCheckbox>
-        <RoomReadyCheckbox
-          type="checkbox"
-          checked={checked}
-          onClick={() => this.handlePlayerDecision()}
-        />
-      </RoomReadyLabel>
-    );
-  }
+  return (
+    <RoomReadyLabel>
+      Tick when you ready
+      <RoomReadyCustomCheckbox checked={checked}>
+        <Checkmark />
+      </RoomReadyCustomCheckbox>
+      <RoomReadyCheckbox
+        type="checkbox"
+        checked={checked}
+        onClick={() => handlePlayerDecision()}
+      />
+    </RoomReadyLabel>
+  );
 }
 
 export default ReadyCheckbox;

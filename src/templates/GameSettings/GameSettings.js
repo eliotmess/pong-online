@@ -105,7 +105,6 @@ class GameSettings extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //   controls: '',
       rooms: []
     };
   }
@@ -177,7 +176,9 @@ class GameSettings extends Component {
       leaveRoom,
       isPlayerOne,
       inLobby,
-      goToLobby
+      goToLobby,
+      setControls,
+      controls
     } = this.props;
     const { rooms } = this.state;
     return (
@@ -187,6 +188,8 @@ class GameSettings extends Component {
             playerName={playerName}
             setPlayerName={setPlayerName}
             goToLobby={() => goToLobby()}
+            setControls={c => setControls(c)}
+            controls={controls}
           />
         )}
         {inLobby && (

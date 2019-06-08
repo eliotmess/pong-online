@@ -7,14 +7,15 @@ Check the **[working DEMO](https://pong1000000clone.herokuapp.com/)** (it's usin
 
 ## Main Features
 
-- It allows you to play the prototype version of fairly faithful Atari's pong port against another player via the Internet.
+- It allows you to play the prototype version of fairly faithful Atari's Pong® port against another player via the Internet.
+- Choose from two different control options - boring arrows (keyboard / touch) or real deal -  **the knob** (mouse / touch).
 - UI is responsive so you can play with your desktop, tablet or smartphone.
 - It's a Progressive Web App so it's recommended to add it to phone's main screen (viewport will be larger).
 - After logging in to lobby you can browse all active games, create a new game or join existing one.
 
 ## Getting started
 
-In order to run project properly you need Node.js environment installed (^10.15.1) and npm package manager (^6.4.1). Run `npm i` command in projects folder in order to install all dependencies and then `npm start` to run it locally.
+In order to run project properly you'll need Node.js environment installed (^10.15.1) and npm package manager (^6.4.1). Run `npm i` command in projects folder in order to install all dependencies and then `npm start` to run it locally.
 
 ## Available Scripts
 
@@ -47,9 +48,10 @@ This project is licensed under the MIT License. App's design is made in homage f
 ## Possible Enhancements
 
 - add difficulty levels and ways to customize games,
-- improve game physics,
+- improve game's physics,
+- improve overall UI design to intensify immersion,
 - add delays between rounds,
-- make it React Native app,
-- use hosting with better performance
+- implement lag compensation in some way,
+- make it React Native app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
