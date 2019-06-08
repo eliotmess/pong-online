@@ -177,8 +177,8 @@ const MainMenu = ({ playerName, setPlayerName, goToLobby, setControls, controls 
           {`Choose controls`}
         </ControlsMsg>
         <ControlsWrapper>
-          <ToggleControlsBtn value="arrows" type="button" isChosen={controls === 'arrows' ? true : false} onClick={e => setControls(e.target.value)}>Arrows</ToggleControlsBtn>
-          <ToggleControlsBtn value="knob" type="button" isChosen={controls === 'knob' ? true : false} onClick={e => setControls(e.target.value)}>Knob</ToggleControlsBtn>
+          <ToggleControlsBtn value="arrows" type="button" isChosen={controls === 'arrows'} onClick={e => setControls(e.target.value)}>Arrows</ToggleControlsBtn>
+          <ToggleControlsBtn value="knob" type="button" isChosen={controls === 'knob'} onClick={e => setControls(e.target.value)}>Knob</ToggleControlsBtn>
         </ControlsWrapper>
         <ToLobbyBtn
           disabled={playerName.length < 2 && true}
