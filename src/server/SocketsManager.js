@@ -135,7 +135,7 @@ module.exports = function socketsManager(socket) {
     const addPaddleBounce = () =>
       io.in(`room-${roomName}`).emit('addAudio', 'paddle');
     for (let i = 0; i < rooms.length; i++) {
-      if (rooms[i].id === roomName) {
+      if (rooms[i].id === roomName && rooms[i].ball !== undefined) {
         rooms[i].ball.update(
           rooms[i].playerOne.paddle,
           rooms[i].playerTwo.paddle,

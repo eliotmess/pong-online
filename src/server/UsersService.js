@@ -27,7 +27,7 @@ class UsersService {
       if (this.rooms[i].id === id) {
         if (
           this.rooms[i].playerOnePaddle === null ||
-          this.rooms[i].playerOnePaddle === null
+          this.rooms[i].playerTwoPaddle === null
         )
           return;
         return {
