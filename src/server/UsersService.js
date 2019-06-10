@@ -79,11 +79,10 @@ class UsersService {
         this.rooms[i].playerTwo = {
           id: null,
           name: null,
-          ready: false
+          ready: false,
+          paddle: null
         };
         this.rooms[i].ball = null;
-        this.rooms[i].clientPaddle = null;
-        this.rooms[i].enemyPaddle = null;
       }
     }
   }
