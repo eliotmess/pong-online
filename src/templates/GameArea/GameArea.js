@@ -60,6 +60,7 @@ class GameArea extends Component {
   };
 
   componentDidMount() {
+    console.log('mount');
     const { pong } = this.props;
     const canvas = this.canvas.current;
     const ctx = canvas.getContext('2d');
@@ -74,6 +75,10 @@ class GameArea extends Component {
     pong.on('syncMoves', data => this.syncGameElements(data));
     pong.on('addAudio', type => this.addAudioEffect(type));
   };
+
+  componentWillUnmount() {
+    console.log('unmount');
+  }
 
   toggleAudio = isOn => {
     this.setState({ soundOn: isOn });

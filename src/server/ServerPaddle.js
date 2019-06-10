@@ -9,17 +9,17 @@ function ServerPaddle(x, y, w, h) {
     width: w,
     height: h
   };
-  this.moveLengtKey = 4;
-  this.moveLengthTouch = 2;
+  this.defaultVelocity = 4;
   this.prevMove = '';
   this.score = 0;
 }
 
 ServerPaddle.prototype = {
   update(pressedKey) {
+    // if (pressedKey = '') return;
     let moveY = Math.abs(this.dy);
     if (pressedKey === this.prevMove) {
-      moveY = moveY >= 3 * moveY ? 3 * moveY : moveY * 1.05;
+      moveY = moveY >= 3 * this.defaultVelocity ? 3 * this.defaultVelocity : moveY * 1.05;
     }
     this.prevMove = pressedKey;
     switch (pressedKey) {
