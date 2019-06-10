@@ -25,11 +25,6 @@ class UsersService {
   getElementsPos(id) {
     for (let i = 0; i < this.rooms.length; i++) {
       if (this.rooms[i].id === id) {
-        if (
-          this.rooms[i].playerOnePaddle === undefined ||
-          this.rooms[i].playerTwoPaddle === undefined
-        )
-          return;
         return {
           ball: this.rooms[i].ball,
           playerOnePaddle: {

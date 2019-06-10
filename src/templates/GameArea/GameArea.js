@@ -77,7 +77,7 @@ class GameArea extends Component {
 
   componentWillUnmount() {
     this.leaveGame();
-  }
+  };
 
   toggleAudio = isOn => {
     this.setState({ soundOn: isOn });
@@ -148,15 +148,17 @@ class GameArea extends Component {
   loop = () => {
     const { roomId, pong } = this.props;
     if (this.canvas.current === null) return;
-    this.drawBoard();
-    if (this.ball !== undefined) {
+    if (this.ball !== undefined &&
+      this.clientPaddle !== undefined &&
+      this.enemyPaddle !== undefined) {
+      this.drawBoard();
       this.clientScore.draw();
       this.enemyScore.draw();
       this.ball.draw();
       this.clientPaddle.draw();
       this.enemyPaddle.draw();
-    }
-    pong.emit('requestSync', roomId);
+      pong.emit('requestSync', roomId);
+    };
     requestAnimationFrame(this.loop.bind(this));
   };
 
