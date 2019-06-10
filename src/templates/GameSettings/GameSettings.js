@@ -75,9 +75,8 @@ const LobbySettings = styled.div`
 const BackBtn = styled.button`
   position: absolute;
   left: 5vw;
-  padding: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  height: 100%;
+  padding: 0 10px;
   background: none;
   border: none;
 

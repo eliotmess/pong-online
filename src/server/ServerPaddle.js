@@ -16,7 +16,6 @@ function ServerPaddle(x, y, w, h) {
 
 ServerPaddle.prototype = {
   update(pressedKey) {
-    // if (pressedKey = '') return;
     let moveY = Math.abs(this.dy);
     if (pressedKey === this.prevMove) {
       moveY = moveY >= 3 * this.defaultVelocity ? 3 * this.defaultVelocity : moveY * 1.05;
