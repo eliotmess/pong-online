@@ -151,13 +151,13 @@ class GameArea extends Component {
     if (this.ball !== undefined &&
       this.clientPaddle !== undefined &&
       this.enemyPaddle !== undefined) {
-      this.drawBoard();
-      this.clientScore.draw();
-      this.enemyScore.draw();
-      this.ball.draw();
-      this.clientPaddle.draw();
-      this.enemyPaddle.draw();
-      pong.emit('requestSync', roomId);
+        this.drawBoard();
+        this.clientScore.draw();
+        this.enemyScore.draw();
+        this.ball.draw();
+        this.clientPaddle.draw();
+        this.enemyPaddle.draw();
+        pong.emit('requestSync', roomId);
     };
     requestAnimationFrame(this.loop.bind(this));
   };

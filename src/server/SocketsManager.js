@@ -28,10 +28,15 @@ module.exports = function socketsManager(socket) {
 
   socket.on('leaveRoom', () => {
     const rooms = usersService.getRooms();
-    async function leaveGame(roomName, socketId, msg) {
-      await socket.in(`room-${roomName}`).emit('playerLeft', msg);
-      await socket.leave(`room-${roomName}`);
-      await usersService.quitRoom(socketId);
+    // async function leaveGame(roomName, socketId, msg) {
+    //   await socket.in(`room-${roomName}`).emit('playerLeft', msg);
+    //   await socket.leave(`room-${roomName}`);
+    //   await usersService.quitRoom(socketId);
+    // }
+    function leaveGame(roomName, socketId, msg) {
+      socket.in(`room-${roomName}`).emit('playerLeft', msg);
+      socket.leave(`room-${roomName}`);
+      usersService.quitRoom(socketId);
     }
     let msg = '';
     for (let i = 0; i < rooms.length; i++) {
@@ -165,6 +170,6 @@ module.exports = function socketsManager(socket) {
         msg = `Your opponent ${rooms[i].playerTwo.name} has left the room.`;
         leaveGame(rooms[i].id, socket.id, msg);
       }
-    }
+    };
   });
 };
