@@ -81,6 +81,9 @@ class UsersService {
           name: null,
           ready: false
         };
+        this.rooms[i].ball = null;
+        this.rooms[i].clientPaddle = null;
+        this.rooms[i].enemyPaddle = null;
       }
     }
   }
