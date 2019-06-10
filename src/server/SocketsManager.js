@@ -140,7 +140,7 @@ module.exports = function socketsManager(socket) {
     const addPaddleBounce = () =>
       io.in(`room-${roomName}`).emit('addAudio', 'paddle');
     for (let i = 0; i < rooms.length; i++) {
-      if (rooms[i].id === roomName) {
+      if (rooms[i].id === roomName && rooms[i].ball !== null) {
         rooms[i].ball.update(
           rooms[i].playerOne.paddle,
           rooms[i].playerTwo.paddle,
@@ -148,10 +148,10 @@ module.exports = function socketsManager(socket) {
           () => addBorderBounce(),
           () => addPaddleBounce()
         );
+        const elementsPos = usersService.getElementsPos(roomName);
+        io.in(`room-${roomName}`).emit('syncMoves', elementsPos);
       };
     };
-    const elementsPos = usersService.getElementsPos(roomName);
-    io.in(`room-${roomName}`).emit('syncMoves', elementsPos);
   });
 
   socket.on('disconnect', () => {
