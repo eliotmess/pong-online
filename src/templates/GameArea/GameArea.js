@@ -75,6 +75,14 @@ class GameArea extends Component {
     pong.on('addAudio', type => this.addAudioEffect(type));
   };
 
+  componentWillUnmount() {
+    kd.UP.unbindDown();
+    kd.UP.unbindUp();
+    kd.DOWN.unbindDown();
+    kd.DOWN.unbindUp();
+    kd.stop();
+  }
+
   toggleAudio = isOn => {
     this.setState({ soundOn: isOn });
   };

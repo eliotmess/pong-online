@@ -113,9 +113,9 @@ module.exports = function socketsManager(socket) {
   socket.on('clientMove', clientMove => {
     const rooms = usersService.getRooms();
     for (let i = 0; i < rooms.length; i++) {
-      if (rooms[i].playerOne.paddle !== undefined && rooms[i].playerOne.id === socket.id) {
+      if (rooms[i].playerOne.id === socket.id) {
         rooms[i].playerOne.paddle.update(clientMove);
-      } else if (rooms[i].playerOne.paddle !== undefined && rooms[i].playerTwo.id === socket.id) {
+      } else if (rooms[i].playerTwo.id === socket.id) {
         rooms[i].playerTwo.paddle.update(clientMove);
       }
     }

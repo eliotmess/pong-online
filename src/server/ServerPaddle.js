@@ -35,7 +35,7 @@ ServerPaddle.prototype = {
         this.move(0, -moveY);
         break;
       default:
-        this.dy = 4;
+        this.dy = this.defaultVelocity;
     }
   },
 
