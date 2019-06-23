@@ -1,7 +1,7 @@
 function ServerBall(x, y, w, h) {
   this.x = x;
   this.y = y;
-  this.dx = 3;
+  this.dx = 2;
   this.dy = 0;
   this.size = 14;
   this.canvas = {
@@ -49,8 +49,8 @@ ServerBall.prototype = {
         yBottom > clientPaddle.y
       ) {
         // hit players paddle
-        this.dx = 3;
-        this.dy = clientPaddle.dy / 3;
+        this.dx = 2;
+        this.dy = clientPaddle.dy / 2;
         this.x += this.dx;
         addPaddleBounce();
       }
@@ -61,8 +61,8 @@ ServerBall.prototype = {
       yBottom > enemyPaddle.y
     ) {
       // hit enemys paddle
-      this.dx = -3;
-      this.dy = enemyPaddle.dy / 3;
+      this.dx = -2;
+      this.dy = enemyPaddle.dy / 2;
       this.x += this.dx;
       addPaddleBounce();
     }
@@ -75,7 +75,7 @@ ServerBall.prototype = {
     const canvBottom = Math.floor(Math.random() * (550 - 400 + 1)) + 400;
     this.x = this.canvas.width / 2;
     this.y = Math.random() < 0.5 ? canvTop : canvBottom;
-    this.dx = randomBallPos < 0.5 ? 3 : -3;
+    this.dx = randomBallPos < 0.5 ? 2 : -2;
     if (this.y === canvTop) {
       this.dy = -randomThrowAngle;
     } else {
