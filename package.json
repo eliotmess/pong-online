@@ -15,7 +15,7 @@
     "keydrown": "^1.2.7",
     "lint-staged": "^8.1.7",
     "lodash": "^4.17.11",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.19.0",
     "prettier": "^1.17.1",
     "pretty-quick": "^1.11.0",
