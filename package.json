@@ -13,7 +13,7 @@
     "express": "^4.17.0",
     "husky": "^2.3.0",
     "keydrown": "^1.2.7",
-    "lint-staged": "^8.1.7",
+    "lint-staged": "^13.2.2",
     "lodash": "^4.17.11",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.0",
